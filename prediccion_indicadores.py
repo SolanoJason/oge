@@ -79,6 +79,7 @@ def plot_timeline(nombre: str, proceso: str, n_predictions: int=0):
         ax.plot(sin_predecir.semestre, sin_predecir.a_tiempo, '.-', predecidos.semestre, predecidos.a_tiempo, '.--', label='A tiempo', color='#22dd22')
         ax.plot(sin_predecir.semestre, sin_predecir.fuera_tiempo, '.-', predecidos.semestre, predecidos.fuera_tiempo, '.--', label='Fuera de tiempo', color='#cc7777')
     ax.legend()
+    plt.show()
     
 def plot_partial_acf(nombre: str, proceso: str, a_tiempo: bool=True):
     """
@@ -214,3 +215,6 @@ def get_predictions(nombre: str, proceso: str, n_predictions: int):
 #for index, row in escuelas_y_procesos.iterrows():
 #    print(row.escuela, row.proceso)
 #    get_predictions_escuela_proceso(escuela=row.escuela, proceso=row.proceso, n_predictions=1)
+
+prepare_data('escuela_indicadores.xlsx', tipo='escuela')
+plot_timeline('ADMINISTRACIÓN', 'Carga', 2)
