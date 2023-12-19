@@ -11,6 +11,7 @@ Este un sistema que permite predecir indicadores de cumplimiento de procesos en 
 > git clone <https://github.com/SolanoJason/oge.git>
 2. Instalar los packages necesarios usando el comando:
 > pip install -r requirements.txt
+### Prediccion de indicadores
 3. Importamos las 3 funciones más importantes
 ```python
 from prediccion_indicadores import prepare_data, get_timeline, plot_timeline
@@ -33,6 +34,23 @@ get_timeline(nombre, proceso, n_predicciones)
 ```
 ![alt text](https://github.com/SolanoJason/oge/blob/main/escuela_timeline.png?raw=true)
 
+### Prediccion de la carga academica
+7. Importamos las funciones
+```python
+from prediccion_carga_academica import predecir_carga_academica, predecir_profesor, semestre_2022_2, df_test
+```
 
+8. Predecimos la carga academica de un profesor
+```python
+profesor = 'SZM001'
+predecir_carga_academica(profesor)
+```
+![alt text](https://github.com/SolanoJason/oge/blob/main/prediccion_profesor.png?raw=true)
 
-
+9. Asignamos un profesor a una escuela y un curso
+```python
+escuela = '36'
+curso = 'C78'
+predecir_profesor(escuela, curso)
+```
+![alt text](https://github.com/SolanoJason/oge/blob/main/asignar_profesor.png?raw=true)
